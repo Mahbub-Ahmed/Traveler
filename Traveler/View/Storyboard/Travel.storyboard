@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jXq-XM-XgQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Travel-->
+        <scene sceneID="Vq0-in-SfT">
+            <objects>
+                <viewController id="ns9-Ta-mB1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7bZ-zO-1jW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="J3P-z2-ehh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Travel" image="car.fill" catalog="system" id="wk1-gg-o4d"/>
+                    <navigationItem key="navigationItem" id="Bj5-A9-qTO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WGy-QB-OFs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3391.304347826087" y="-232.36607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rkI-EQ-xa8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jXq-XM-XgQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tgM-du-0GU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ns9-Ta-mB1" kind="relationship" relationship="rootViewController" id="3ue-oX-8Bn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vLG-X4-W5U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4301.449275362319" y="-232.36607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="car.fill" catalog="system" width="128" height="93"/>
+    </resources>
+</document>
