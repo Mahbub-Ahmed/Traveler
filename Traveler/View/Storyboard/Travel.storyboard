@@ -14,7 +14,27 @@
                     <view key="view" contentMode="scaleToFill" id="7bZ-zO-1jW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Travel" translatesAutoresizingMaskIntoConstraints="NO" id="XbH-qj-wsx">
+                                <rect key="frame" x="0.0" y="88" width="414" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Q8q-Cq-18x"/>
+                                </constraints>
+                            </imageView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="btW-uz-MwU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="btW-uz-MwU" firstAttribute="top" secondItem="J3P-z2-ehh" secondAttribute="top" id="Dk0-DU-3HN"/>
+                            <constraint firstItem="XbH-qj-wsx" firstAttribute="leading" secondItem="J3P-z2-ehh" secondAttribute="leading" id="E3q-wX-ilJ"/>
+                            <constraint firstItem="XbH-qj-wsx" firstAttribute="top" secondItem="J3P-z2-ehh" secondAttribute="top" id="RX7-EL-36s"/>
+                            <constraint firstItem="btW-uz-MwU" firstAttribute="trailing" secondItem="J3P-z2-ehh" secondAttribute="trailing" id="UyD-g3-krv"/>
+                            <constraint firstItem="J3P-z2-ehh" firstAttribute="trailing" secondItem="XbH-qj-wsx" secondAttribute="trailing" id="Xb3-Lg-M6y"/>
+                            <constraint firstItem="btW-uz-MwU" firstAttribute="leading" secondItem="J3P-z2-ehh" secondAttribute="leading" id="jAb-E6-s8s"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="J3P-z2-ehh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Travel" image="car.fill" catalog="system" id="wk1-gg-o4d"/>
@@ -45,6 +65,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Travel" width="480" height="180"/>
         <image name="car.fill" catalog="system" width="128" height="93"/>
     </resources>
 </document>

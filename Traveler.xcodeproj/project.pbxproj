@@ -17,6 +17,7 @@
 		6BDE4F3924C67E6B00D6535A /* HotelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE4F3824C67E6B00D6535A /* HotelsViewController.swift */; };
 		6BDE4F4224C7B48C00D6535A /* Hotels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDE4F4124C7B48C00D6535A /* Hotels.storyboard */; };
 		6BDE4F4424C7B70A00D6535A /* Travel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDE4F4324C7B70A00D6535A /* Travel.storyboard */; };
+		6BDE4F4624C7BC1300D6535A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BDE4F4524C7BC1300D6535A /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		6BDE4F3824C67E6B00D6535A /* HotelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsViewController.swift; sourceTree = "<group>"; };
 		6BDE4F4124C7B48C00D6535A /* Hotels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hotels.storyboard; sourceTree = "<group>"; };
 		6BDE4F4324C7B70A00D6535A /* Travel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Travel.storyboard; sourceTree = "<group>"; };
+		6BDE4F4524C7BC1300D6535A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				6BDE4F1324C66E6700D6535A /* Assets.xcassets */,
+				6BDE4F4524C7BC1300D6535A /* Images.xcassets */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				6BDE4F1724C66E6700D6535A /* LaunchScreen.storyboard in Resources */,
 				6BDE4F1424C66E6700D6535A /* Assets.xcassets in Resources */,
 				6BDE4F4224C7B48C00D6535A /* Hotels.storyboard in Resources */,
+				6BDE4F4624C7BC1300D6535A /* Images.xcassets in Resources */,
 				6BDE4F4424C7B70A00D6535A /* Travel.storyboard in Resources */,
 				6BDE4F1224C66E6700D6535A /* Main.storyboard in Resources */,
 			);
