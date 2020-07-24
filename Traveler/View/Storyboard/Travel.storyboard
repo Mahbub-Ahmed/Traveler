@@ -10,36 +10,57 @@
         <!--Travel-->
         <scene sceneID="Vq0-in-SfT">
             <objects>
-                <viewController id="ns9-Ta-mB1" sceneMemberID="viewController">
+                <viewController id="ns9-Ta-mB1" customClass="TravelViewController" customModule="Traveler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7bZ-zO-1jW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Travel" translatesAutoresizingMaskIntoConstraints="NO" id="XbH-qj-wsx">
-                                <rect key="frame" x="0.0" y="88" width="414" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="Q8q-Cq-18x"/>
-                                </constraints>
-                            </imageView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="btW-uz-MwU">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Places" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mte-h9-Gji">
+                                <rect key="frame" x="15" y="159" width="135.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uwD-QL-NLy">
+                                <rect key="frame" x="15" y="198" width="384" height="615"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="B7r-6X-1Y5">
+                                    <size key="itemSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ns9-Ta-mB1" id="3dd-qN-ULn"/>
+                                    <outlet property="delegate" destination="ns9-Ta-mB1" id="zkD-Hc-s3P"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="btW-uz-MwU" firstAttribute="top" secondItem="J3P-z2-ehh" secondAttribute="top" id="Dk0-DU-3HN"/>
-                            <constraint firstItem="XbH-qj-wsx" firstAttribute="leading" secondItem="J3P-z2-ehh" secondAttribute="leading" id="E3q-wX-ilJ"/>
-                            <constraint firstItem="XbH-qj-wsx" firstAttribute="top" secondItem="J3P-z2-ehh" secondAttribute="top" id="RX7-EL-36s"/>
+                            <constraint firstItem="uwD-QL-NLy" firstAttribute="top" secondItem="Mte-h9-Gji" secondAttribute="bottom" constant="15" id="6Vt-cm-ToT"/>
                             <constraint firstItem="btW-uz-MwU" firstAttribute="trailing" secondItem="J3P-z2-ehh" secondAttribute="trailing" id="UyD-g3-krv"/>
-                            <constraint firstItem="J3P-z2-ehh" firstAttribute="trailing" secondItem="XbH-qj-wsx" secondAttribute="trailing" id="Xb3-Lg-M6y"/>
+                            <constraint firstItem="Mte-h9-Gji" firstAttribute="top" secondItem="btW-uz-MwU" secondAttribute="bottom" constant="15" id="W1j-5Y-EeO"/>
+                            <constraint firstItem="btW-uz-MwU" firstAttribute="top" secondItem="J3P-z2-ehh" secondAttribute="top" id="Xs1-51-KSF"/>
+                            <constraint firstItem="J3P-z2-ehh" firstAttribute="trailing" secondItem="uwD-QL-NLy" secondAttribute="trailing" constant="15" id="ilj-PH-iHw"/>
                             <constraint firstItem="btW-uz-MwU" firstAttribute="leading" secondItem="J3P-z2-ehh" secondAttribute="leading" id="jAb-E6-s8s"/>
+                            <constraint firstItem="J3P-z2-ehh" firstAttribute="bottom" secondItem="uwD-QL-NLy" secondAttribute="bottom" id="qTI-Tg-0Zs"/>
+                            <constraint firstItem="uwD-QL-NLy" firstAttribute="leading" secondItem="J3P-z2-ehh" secondAttribute="leading" constant="15" id="v3B-ro-3TP"/>
+                            <constraint firstItem="Mte-h9-Gji" firstAttribute="leading" secondItem="J3P-z2-ehh" secondAttribute="leading" constant="15" id="zfO-iZ-QfY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J3P-z2-ehh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Travel" image="car.fill" catalog="system" id="wk1-gg-o4d"/>
                     <navigationItem key="navigationItem" id="Bj5-A9-qTO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="uwD-QL-NLy" id="W3L-x3-NBs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGy-QB-OFs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,7 +86,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Travel" width="480" height="180"/>
         <image name="car.fill" catalog="system" width="128" height="93"/>
     </resources>
 </document>
