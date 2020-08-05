@@ -29,7 +29,7 @@ struct EndPoint {
 extension EndPoint {
     func urlRequest(query params: ((String) -> String)? = nil) throws -> URLRequest {
         let items: [URLQueryItem]? = queryItems?.compactMap{ key in
-            guard let params = params { return nil }
+            guard let params = params else { return nil }
             return URLQueryItem(name: key, value: params(key))
         }
         
