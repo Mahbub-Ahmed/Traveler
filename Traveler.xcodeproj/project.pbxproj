@@ -3,14 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B26004824CE21E100FC01E9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B26004724CE21E100FC01E9 /* NetworkService.swift */; };
-		6B26004A24CE221200FC01E9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B26004924CE221200FC01E9 /* NetworkError.swift */; };
-		6B26004F24D76E4A00FC01E9 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B26004E24D76E4A00FC01E9 /* EndPoint.swift */; };
-		6B26005124D76F8C00FC01E9 /* GitHubEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B26005024D76F8C00FC01E9 /* GitHubEndPoint.swift */; };
+		6BD3660C24DA4D0700B441DB /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 6BD3660B24DA4D0700B441DB /* Network */; };
 		6BDE4F0B24C66E6700D6535A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE4F0A24C66E6700D6535A /* AppDelegate.swift */; };
 		6BDE4F0D24C66E6700D6535A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE4F0C24C66E6700D6535A /* SceneDelegate.swift */; };
 		6BDE4F1224C66E6700D6535A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDE4F1024C66E6700D6535A /* Main.storyboard */; };
@@ -38,10 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B26004724CE21E100FC01E9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		6B26004924CE221200FC01E9 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		6B26004E24D76E4A00FC01E9 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		6B26005024D76F8C00FC01E9 /* GitHubEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubEndPoint.swift; sourceTree = "<group>"; };
+		6BD3660724DA4A9700B441DB /* Network */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Network; sourceTree = "<group>"; };
 		6BDE4F0724C66E6700D6535A /* Traveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BDE4F0A24C66E6700D6535A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BDE4F0C24C66E6700D6535A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BD3660C24DA4D0700B441DB /* Network in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,37 +75,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6B26004B24D76E2200FC01E9 /* EndPoints */ = {
+		6BD3660824DA4BFC00B441DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6B26004E24D76E4A00FC01E9 /* EndPoint.swift */,
-				6B26005024D76F8C00FC01E9 /* GitHubEndPoint.swift */,
 			);
-			path = EndPoints;
-			sourceTree = "<group>";
-		};
-		6B26004C24D76E3100FC01E9 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				6B26004724CE21E100FC01E9 /* NetworkService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		6B26004D24D76E3900FC01E9 /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				6B26004924CE221200FC01E9 /* NetworkError.swift */,
-			);
-			path = Error;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6BDE4EFE24C66E6600D6535A = {
 			isa = PBXGroup;
 			children = (
+				6BD3660724DA4A9700B441DB /* Network */,
 				6BDE4F0924C66E6700D6535A /* Traveler */,
 				6BDE4F2024C66E6800D6535A /* TravelerTests */,
 				6BDE4F0824C66E6700D6535A /* Products */,
+				6BD3660824DA4BFC00B441DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,9 +174,6 @@
 		6BDE4F3124C677AA00D6535A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				6B26004D24D76E3900FC01E9 /* Error */,
-				6B26004C24D76E3100FC01E9 /* Service */,
-				6B26004B24D76E2200FC01E9 /* EndPoints */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -252,6 +228,9 @@
 			dependencies = (
 			);
 			name = Traveler;
+			packageProductDependencies = (
+				6BD3660B24DA4D0700B441DB /* Network */,
+			);
 			productName = Traveler;
 			productReference = 6BDE4F0724C66E6700D6535A /* Traveler.app */;
 			productType = "com.apple.product-type.application";
@@ -342,15 +321,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BDE4F4824C9064600D6535A /* Places.swift in Sources */,
-				6B26005124D76F8C00FC01E9 /* GitHubEndPoint.swift in Sources */,
-				6B26004A24CE221200FC01E9 /* NetworkError.swift in Sources */,
 				6BDE4F3924C67E6B00D6535A /* HotelsViewController.swift in Sources */,
-				6B26004F24D76E4A00FC01E9 /* EndPoint.swift in Sources */,
 				6BDE4F4C24C90B3000D6535A /* PlacesViewCell.swift in Sources */,
 				6BDE4F0B24C66E6700D6535A /* AppDelegate.swift in Sources */,
 				6BDE4F0D24C66E6700D6535A /* SceneDelegate.swift in Sources */,
 				6BDE4F3524C67E2A00D6535A /* TravelViewController.swift in Sources */,
-				6B26004824CE21E100FC01E9 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +588,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6BD3660B24DA4D0700B441DB /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6BDE4EFF24C66E6600D6535A /* Project object */;
 }
