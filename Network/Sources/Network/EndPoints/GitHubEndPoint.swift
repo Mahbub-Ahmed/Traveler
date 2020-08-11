@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct GitHubEndPoint {
-    static let api = GitHubEndPoint()
+public struct GitHubEndPoint {
+    public static let api = GitHubEndPoint()
     
-    let traveler = EndPoint(scheme: "https",
+    public let traveler = EndPoint(scheme: "https",
                           baseURL: "github.com",
                           path: "/Mahbub-Ahmed/Data_Set/tree/master/TravelerData",
                           queryItems: nil,

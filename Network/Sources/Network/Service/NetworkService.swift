@@ -8,13 +8,16 @@
 
 import Foundation
 
-protocol NetworkServiceProtocol: class{
-    associatedtype Model
-    func fetchData(urlString: String, completion: @escaping (Model?, NetworkError?) -> Void)
-}
+//protocol NetworkServiceProtocol: class{
+//    associatedtype Model
+//    func fetchData(urlString: String, completion: @escaping (Model?, NetworkError?) -> Void)
+//}
 
-class NetworkService {
+public class NetworkService {
     private let session = URLSession(configuration: .default)
+    
+    public init() {
+    }
     
     func request(endpoint: EndPoint, completion: @escaping ((Result<Data?, NetworkError>)->Void)) {
         do {
@@ -51,7 +54,7 @@ class NetworkService {
         }
     }
     
-    func request<Model: Decodable>(endPoint: EndPoint, completion: @escaping (Result<Model, NetworkError>)-> Void) {
+    public func request<Model: Decodable>(endPoint: EndPoint, completion: @escaping (Result<Model, NetworkError>)-> Void) {
         request(endPoint: endPoint, parse: { data -> Model? in
             guard let data = data else { return nil }
             return try JSONDecoder().decode(Model.self, from: data)

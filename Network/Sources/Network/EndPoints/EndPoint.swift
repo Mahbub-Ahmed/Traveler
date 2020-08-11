@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct EndPoint {
+public struct EndPoint {
     // http or https
     let scheme: String
     
@@ -26,7 +26,7 @@ struct EndPoint {
 }
 
 
-extension EndPoint {
+public extension EndPoint {
     func urlRequest(query params: ((String) -> String)? = nil) throws -> URLRequest {
         let items: [URLQueryItem]? = queryItems?.compactMap{ key in
             guard let params = params else { return nil }
