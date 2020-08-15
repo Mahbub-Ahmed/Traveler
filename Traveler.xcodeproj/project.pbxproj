@@ -110,7 +110,6 @@
 				6BDE4F3024C6771A00D6535A /* View */,
 				6BDE4F2D24C675A000D6535A /* Asset */,
 				6BDE4F3224C677BB00D6535A /* Caching */,
-				6BDE4F3124C677AA00D6535A /* Network */,
 				6BDE4F2C24C6759700D6535A /* Application */,
 			);
 			path = Traveler;
@@ -169,13 +168,6 @@
 				6BDE4F3A24C67E7D00D6535A /* Storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		6BDE4F3124C677AA00D6535A /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		6BDE4F3224C677BB00D6535A /* Caching */ = {

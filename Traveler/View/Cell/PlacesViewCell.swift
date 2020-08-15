@@ -19,6 +19,18 @@ class PlacesViewCell: UICollectionViewCell {
         super.awakeFromNib()
         setupConstraint()
         setupCornerRadius()
+        UIImage.from(urlString: "https://raw.githubusercontent.com/Mahbub-Ahmed/Data_Set/master/TravelerData/images/grand_canyon.jpg") { [weak self] result in
+            switch result {
+            case .success(let image):
+                DispatchQueue.main.async {
+                     self?.image.image = image
+                }
+               
+            case .failure(_):
+                //set placeholder
+                self?.image.image = UIImage(named: "Traveler")
+            }
+        }
     }
     
     // MARK: Private methods

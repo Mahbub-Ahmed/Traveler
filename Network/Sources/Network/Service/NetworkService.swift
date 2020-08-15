@@ -1,17 +1,10 @@
 //
 //  NetworkService.swift
-//  Traveler
 //
 //  Created by Mahbub  Ahmed on 7/26/20.
 //  Copyright © 2020 Mahbub  Ahmed. All rights reserved.
-//
 
 import Foundation
-
-//protocol NetworkServiceProtocol: class{
-//    associatedtype Model
-//    func fetchData(urlString: String, completion: @escaping (Model?, NetworkError?) -> Void)
-//}
 
 public class NetworkService {
     private let session = URLSession(configuration: .default)
@@ -21,7 +14,7 @@ public class NetworkService {
     
     func request(endpoint: EndPoint, completion: @escaping ((Result<Data?, NetworkError>)->Void)) {
         do {
-            let dataTask = try session.dataTask(with: endpoint.urlRequest()) { data, response, error in
+            let dataTask = try session.dataTask(with: endpoint.urlRequest(query: nil)) { data, response, error in
                 
                 guard error == nil else {
                     completion(.failure(.connectionError))
@@ -37,7 +30,7 @@ public class NetworkService {
     }
     
     
-    func request<Model>(endPoint: EndPoint, parse: @escaping ((Data?) throws -> Model?), completion: @escaping (Result<Model, NetworkError>)-> Void) {
+    public func request<Model>(endPoint: EndPoint, parse: @escaping ((Data?) throws -> Model?), completion: @escaping (Result<Model, NetworkError>)-> Void) {
         request(endpoint: endPoint) { result in
             switch result {
             case .success(let data):
@@ -53,6 +46,7 @@ public class NetworkService {
             }
         }
     }
+    
     
     public func request<Model: Decodable>(endPoint: EndPoint, completion: @escaping (Result<Model, NetworkError>)-> Void) {
         request(endPoint: endPoint, parse: { data -> Model? in

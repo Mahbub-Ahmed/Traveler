@@ -1,14 +1,17 @@
 //
 //  EndPoint.swift
-//  Traveler
 //
 //  Created by Mahbub  Ahmed on 8/2/20.
 //  Copyright © 2020 Mahbub  Ahmed. All rights reserved.
-//
 
 import Foundation
 
-public struct EndPoint {
+public protocol EndPoint {
+    func urlRequest(query params: ((String) -> String)?) throws -> URLRequest
+}
+
+
+public struct ServiceEndPoint: EndPoint {
     // http or https
     let scheme: String
     
@@ -23,11 +26,8 @@ public struct EndPoint {
     
     // GET, POST ....
     let method: String
-}
-
-
-public extension EndPoint {
-    func urlRequest(query params: ((String) -> String)? = nil) throws -> URLRequest {
+    
+    public func urlRequest(query params: ((String) -> String)?) throws -> URLRequest {
         let items: [URLQueryItem]? = queryItems?.compactMap{ key in
             guard let params = params else { return nil }
             return URLQueryItem(name: key, value: params(key))
@@ -40,6 +40,23 @@ public extension EndPoint {
         components.queryItems = items
         
         guard let url = components.url else {
+            throw NetworkError.invalidURL
+        }
+        return URLRequest(url: url)
+    }
+}
+
+
+public struct URLEndPoint: EndPoint {
+    // URL String
+    let urlString: String
+    
+    public init(urlString: String) {
+        self.urlString = urlString
+    }
+    
+    public func urlRequest(query params: ((String) -> String)? = nil) throws -> URLRequest {
+        guard let url = URL(string: urlString) else {
             throw NetworkError.invalidURL
         }
         return URLRequest(url: url)
