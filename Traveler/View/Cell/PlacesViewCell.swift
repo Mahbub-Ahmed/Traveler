@@ -19,7 +19,7 @@ class PlacesViewCell: UICollectionViewCell {
         super.awakeFromNib()
         setupConstraint()
         setupCornerRadius()
-        UIImage.from(urlString: "https://raw.githubusercontent.com/Mahbub-Ahmed/Data_Set/master/TravelerData/images/grand_canyon.jpg") { [weak self] result in
+        UIImage.from(urlString: "https://raw.githubusercontent.com/Mahbub-Ahmed/Data_Set/master/TravelerData/images/grand_canyon.jpg", shouldCache: true) { [weak self] result in
             switch result {
             case .success(let image):
                 DispatchQueue.main.async {

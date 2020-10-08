@@ -174,7 +174,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Caching;
+			name = Caching;
+			path = ../Network/Caching;
 			sourceTree = "<group>";
 		};
 		6BDE4F3324C67DAF00D6535A /* Controller */ = {

@@ -8,12 +8,17 @@ import Foundation
 import UIKit
 
 public extension UIImage {
-    static func from(urlString: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
-        let imageEnd = URLEndPoint(urlString: urlString)
+    static func from(urlString: String, shouldCache: Bool=false, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
+        let imageCache = ImageCache()
+        if shouldCache, let image = imageCache.cachedImage(for: urlString) {
+            completion(.success(image))
+            return
+        }
         
-        Data.from(endPoint: imageEnd, parse: { (data) -> UIImage? in
-            guard let data = data else { return nil }
-            return UIImage(data: data)
+        Data.from(endPoint: URLEndPoint(urlString: urlString), parse: { (data) -> UIImage? in
+            guard let data = data, let image = UIImage(data: data) else { return nil }
+            if shouldCache { imageCache.cache(image: image, for: urlString) }
+            return image
         }, completion: completion)
     }
 }
